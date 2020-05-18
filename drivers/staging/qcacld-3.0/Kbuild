@@ -77,7 +77,7 @@ ifeq ($(CONFIG_WLAN_FEATURE_PERIODIC_STA_STATS), y)
 HDD_OBJS += $(HDD_SRC_DIR)/wlan_hdd_periodic_sta_stats.o
 endif
 
-ifeq ($(CONFIG_WLAN_DEBUGFS), y)
+ifeq ($(CONFIG_ANDROID), y)
 HDD_OBJS += $(HDD_SRC_DIR)/wlan_hdd_debugfs.o
 HDD_OBJS += $(HDD_SRC_DIR)/wlan_hdd_debugfs_llstat.o
 HDD_OBJS += $(HDD_SRC_DIR)/wlan_hdd_debugfs_csr.o

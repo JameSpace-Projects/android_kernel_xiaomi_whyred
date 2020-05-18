@@ -505,6 +505,10 @@ QDF_STATUS hdd_debugfs_init(struct hdd_adapter *adapter)
 	if (NULL == adapter->debugfs_phy)
 		return QDF_STATUS_E_FAILURE;
 
+#ifndef CONFIG_DEBUG_FS
+	    return wlan_hdd_init_power_stats_debugfs(adapter);
+#endif
+
 	if (NULL == debugfs_create_file("wow_pattern", 00400 | 00200,
 					adapter->debugfs_phy, adapter,
 					&fops_wowpattern))
